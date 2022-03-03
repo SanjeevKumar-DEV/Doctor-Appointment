@@ -1,5 +1,6 @@
 const seedPatients= require('./patient-seeds');
 const seedDoctors= require('./doctor-seeds');
+const seedAppointments= require('./appointment-seeds');
 
 const sequelize = require('../config/connection');
 
@@ -11,9 +12,12 @@ const seedAll = async () => {
     console.log('\n---- PATIENTS SEEDED ----\n');
 
     await seedDoctors();
-    console.log('\n---- DOCTORS SEEDED ---\n');
+    console.log('\n---- DOCTORS SEEDED ----\n');
 
-    ProcessingInstruction.exit(0);
+    await seedAppointments();
+    console.log('\n---- APPOINTMENTS SEEDED ----\n');
+
+    process.exit(0);
 };
 
 seedAll();
