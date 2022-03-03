@@ -5,37 +5,37 @@ const appointmentData = [
         appointment_id: "",
         patient_id: "",
         doctor_id: "",
-        date_book:
+        date_book: ""
     },
     {
         appointment_id: "",
         patient_id: "",
         doctor_id: "",
-        date_book:
+        date_book: ""
     },
     {
         appointment_id: "",
         patient_id: "",
         doctor_id: "",
-        date_book:
+        date_book: ""
     },
     {
         appointment_id: "",
         patient_id: "",
         doctor_id: "",
-        date_book:
+        date_book: ""
     },
     {
         appointment_id: "",
         patient_id: "",
         doctor_id: "",
-        date_book:
+        date_book: ""
     },
     {
         appointment_id: "",
         patient_id: "",
         doctor_id: "",
-        date_book:
+        date_book: ""
     },
 ];
 
