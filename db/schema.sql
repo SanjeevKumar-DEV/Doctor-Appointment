@@ -3,32 +3,36 @@ CREATE DATABASE docpat_db;
 
 USE docpat_db;
 
-CREATE TABLE patients (
-  patients_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  first_name VARCHAR(30) NOT NULL,
-  last_name VARCHAR(30) NOT NULL,
-  email VARCHAR(255) NOT NULL,
-  -- active BOOLEAN NOT NULL,
-  
-  password VARCHAR(255) NOT NULL
-  
-);
+CREATE TABLE `Patients` (
+  `patients_id` INTEGER NOT NULL auto_increment, 
+  `first_name` VARCHAR(255) NOT NULL, 
+  `last_name` VARCHAR(255) NOT NULL, 
+  `email` VARCHAR(255) UNIQUE, 
+  `isemailcontact` TINYINT(1), 
+  `password` VARCHAR(255), 
+  PRIMARY KEY (`patients_id`)
+  );
 
-CREATE TABLE doctors (
-  doctors_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
-  first_name VARCHAR(30) NOT NULL,
-  last_name VARCHAR(30) NOT NULL,
-  email VARCHAR (255) NOT NULL,
-  -- active BOOLEAN NOT NULL,
-  
-  password VARCHAR(255) NOT NULL
-);
+CREATE TABLE `Doctors` (
+  `doctors_id` INTEGER NOT NULL auto_increment, 
+  `speciality` VARCHAR(255) NOT NULL, 
+  `first_name` VARCHAR(255) NOT NULL, 
+  `last_name` VARCHAR(255) NOT NULL, 
+  `email` VARCHAR(255) UNIQUE, 
+  `isemailcontact` TINYINT(1), 
+  `password` VARCHAR(255), 
+  PRIMARY KEY (`doctors_id`)) ENGINE=InnoDB;
 
-CREATE TABLE appointments (
-  appoitnemts_id INT NOT NULL,
-  patient_id INT NOT NULL
-  doctor_id INT NOT NULL,
-  date_booked DATETIME DEFAULT NOT NULL,
-  Note VARCHAR(255) NOT NULL,
-);
+CREATE TABLE `Appointments` (
+  `appointments_id` INTEGER NOT NULL auto_increment, 
+  `doctors_id` INTEGER, 
+  `patients_id` INTEGER, 
+  `date_booked` DATETIME NOT NULL, 
+  `notes` VARCHAR(255) NOT NULL, 
+  PRIMARY KEY (`appointments_id`), 
+  FOREIGN KEY (`doctors_id`) 
+  REFERENCES `doctors` (`doctors_id`), 
+  FOREIGN KEY (`patients_id`) 
+  REFERENCES `patients` (`patients_id`)
+  );
 

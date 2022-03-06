@@ -1,15 +1,20 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require ('../config/connection');
 
-class Patients extends Model {}
+class Doctors extends Model {}
 
-Patients.init(
+Doctors.init(
     {
-        patients_id: {
+        doctors_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true,
+        },
+        
+        speciality: {
+            type: DataTypes.STRING,
+            allowNull: false, 
         },
 
         first_name: {
@@ -43,21 +48,18 @@ Patients.init(
     },
     {
             hooks: {
-                beforeCreate: async (newPatientsData) => {
-                    newPatientsData.email = await newPatientsData.email.toLowerCase();
+                beforeCreate: async (newDoctorsData) => {
+                    newDoctorsData.email = await newDoctorsData.email.toLowerCase();
                     return newPatientsData; 
                 },
-                beforeUpdate: async (updatedPatientsData) => {
-                    updatedPatientsData.email = await updatedPatientsData.email.toLowerCase();
-                    return updatedPatientsData; 
+                beforeUpdate: async (updatedDoctorsData) => {
+                    updatedDoctorsData.email = await updatedDoctorsData.email.toLowerCase();
+                    return updatedDoctorsData; 
                 },
             },
             sequelize,
             timestamps: false,
-            modeName: 'patients',
+            modeName: 'doctors',
             freezeTableName: true
     },
-
-        
-    
 );

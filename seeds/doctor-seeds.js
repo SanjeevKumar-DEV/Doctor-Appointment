@@ -1,26 +1,29 @@
-const Doctors = require('../models/doctors');
+const { Doctors } = require('../models');
 
 const doctorData = [
     {
-        first_name: "",
-        last_name: "",
-        email: "",
-        isemailcontact: true,
-        password: ""
+        speciality: "GP",
+        first_name: "John",
+        last_name: "Fang",
+        email: "john.fang@example.com",
+        isemailcontact: 1,
+        password: "123456789p"
     },
     {
-        first_name: "",
-        last_name: "",
-        email: "",
-        isemailcontact: true,
-        password: ""
+        speciality: "Eye Specialist",
+        first_name: "Michael",
+        last_name: "Thames",
+        email: "michael.thames@example.com",
+        isemailcontact: 1,
+        password: "123456789p"
     },
     {
-        first_name: "",
-        last_name: "",
-        email: "",
-        isemailcontact: true,
-        password: ""
+        speciality: "Heart Specialist",
+        first_name: "Silas",
+        last_name: "Fermis",
+        email: "silas.fermis@example.com",
+        isemailcontact: 1,
+        password: "123456789p"
     },
 
 ];
