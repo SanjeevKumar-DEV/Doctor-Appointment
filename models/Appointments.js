@@ -42,3 +42,5 @@ Appointments.init(
     }    
     
 );
+
+module.exports = Appointments;

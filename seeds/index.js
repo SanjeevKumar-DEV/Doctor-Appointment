@@ -14,9 +14,8 @@ const seedAll = async () => {
     await seedDoctors();
     console.log('\n---- DOCTORS SEEDED ----\n');
 
-
-    // await seedAppointments();
-    // console.log('\n---- APPOINTMENTS SEEDED ----\n');
+    await seedAppointments();
+    console.log('\n---- APPOINTMENTS SEEDED ----\n');
 
     process.exit(0);
 };

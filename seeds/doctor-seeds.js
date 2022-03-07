@@ -30,5 +30,5 @@ const doctorData = [
 
 const seedDoctors = () => Doctors.bulkCreate(doctorData);
 
-module.exprots = seedDoctors;
+module.exports = seedDoctors;
 

@@ -63,3 +63,5 @@ Doctors.init(
             freezeTableName: true
     },
 );
+
+module.exports = Doctors;
