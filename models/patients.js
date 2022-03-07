@@ -61,3 +61,5 @@ Patients.init(
         
     
 );
+
+module.exports = Patients;
