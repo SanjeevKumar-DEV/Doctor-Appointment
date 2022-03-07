@@ -1,4 +1,4 @@
-const Appointments = require('../models');
+const { Appointments } = require('../models');
 
 const appointmentData = [
     {
@@ -21,8 +21,6 @@ const appointmentData = [
     },
     
 ];
-
-console.log(`Appointments:  ${Appointments}`);
 
 const seedAppointments = () => Appointments.bulkCreate(appointmentData);
 

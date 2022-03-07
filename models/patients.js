@@ -57,8 +57,6 @@ Patients.init(
             modeName: 'patients',
             freezeTableName: true
     },
-
-        
     
 );
 
