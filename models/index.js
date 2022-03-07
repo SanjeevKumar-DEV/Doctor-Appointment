@@ -1,6 +1,6 @@
 const Patients = require('./Patients');
 const Doctors = require('./Doctors');
-const Appointments = require ('./Appointments');
+// const Appointments = require ('./Appointments');
 
 
 // Patients.hasMany(Appointments, {
@@ -30,5 +30,5 @@ const Appointments = require ('./Appointments');
 
 // });
 
-module.exports = { Patients, Doctors, Appointments};
+module.exports = { Patients, Doctors };
 

@@ -2,41 +2,24 @@ const Appointments = require('../models');
 
 const appointmentData = [
     {
-        appointment_id: "",
-        patient_id: "",
-        doctor_id: "",
-        date_book: ""
+        doctors_id: "1",
+        patients_id: "1",
+        date_booked: "2020-01-01 15:10:10",
+        note: "General problem with digestion.",
     },
     {
-        appointment_id: "",
-        patient_id: "",
-        doctor_id: "",
-        date_book: ""
+        doctors_id: "2",
+        patients_id: "2",
+        date_booked: "2020-01-01 15:10:10",
+        note: "Issue with left eyesight.",
     },
     {
-        appointment_id: "",
-        patient_id: "",
-        doctor_id: "",
-        date_book: ""
+        doctors_id: "3",
+        patients_id: "5",
+        date_booked: "2020-01-01 15:10:10",
+        note: "Heart beat rate faster than usual.",
     },
-    {
-        appointment_id: "",
-        patient_id: "",
-        doctor_id: "",
-        date_book: ""
-    },
-    {
-        appointment_id: "",
-        patient_id: "",
-        doctor_id: "",
-        date_book: ""
-    },
-    {
-        appointment_id: "",
-        patient_id: "",
-        doctor_id: "",
-        date_book: ""
-    },
+    
 ];
 
 const seedAppointments = () => Appointments.bulkCreat(appointmentData);
