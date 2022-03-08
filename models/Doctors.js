@@ -50,7 +50,7 @@ Doctors.init(
             hooks: {
                 beforeCreate: async (newDoctorsData) => {
                     newDoctorsData.email = await newDoctorsData.email.toLowerCase();
-                    return newPatientsData; 
+                    return newDoctorsData; 
                 },
                 beforeUpdate: async (updatedDoctorsData) => {
                     updatedDoctorsData.email = await updatedDoctorsData.email.toLowerCase();
