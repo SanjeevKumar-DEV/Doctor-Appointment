@@ -41,4 +41,25 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+// CREATE new Patient
+router.post("/", async (req, res) => {
+  try {
+    const dbPatientData = await Patients.create({
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      email: req.body.email,
+      isemailcontact: req.body.isemailcontact,
+      password: req.body.password,
+    });
+    // req.session.save(() => {
+    // req.session.loggedIn = true;
+
+    res.status(200).json(dbPatientData);
+    // });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
