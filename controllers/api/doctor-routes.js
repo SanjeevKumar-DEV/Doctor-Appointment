@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Doctors } = require("../../models");
+const { Doctors, Patients } = require("../../models");
 const { Appointments } = require("../../models");
 
 // route to get all Doctors
@@ -38,6 +38,49 @@ router.get("/:id", async (req, res) => {
     console.log(err);
     res.status(500).json(err);
   }
+});
+
+// GET all appointments by doctor email
+router.get("/email/:email", async (req, res) => {
+  let dbDoctorData;
+  let id;
+  try {
+    dbDoctorData = await Doctors.findOne({
+      where: {
+        email: req.params.email,
+      },
+    });
+    if(dbDoctorData.doctors_id != null){
+      try {
+        id = dbDoctorData.doctors_id;
+        const appointmentData = await Doctors.findByPk(id, {
+          include: [
+            {
+              model: Appointments,
+              attributes: [
+                "appointments_id",
+                "doctors_id",
+                "patients_id",
+                "date_booked",
+                "notes",
+              ],
+            },
+          ],
+        });
+    
+        const appointments = appointmentData.get({ plain: true });
+        res.status(200).json(appointments);
+        //   res.render('appointment', { appointments, loggedIn: req.session.loggedIn });
+      } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+      }
+    }
+  } catch (err) {
+    console.log(err);
+    res.status(400).json({Messge : "Email not found"});
+  }
+  
 });
 
 // CREATE new Doctor
