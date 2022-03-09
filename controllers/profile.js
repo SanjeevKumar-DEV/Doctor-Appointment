@@ -51,6 +51,7 @@ router.get('/:id/edit', async (req, res) => {
                     attributes: ['name'],
                     model: Doctors,
                     attributes: ['name'],
+                    
                 
                 },
             ],
