@@ -1,7 +1,12 @@
 const { Model, DataTypes } = require('sequelize');
+const bcrypt = require('bcrypt');
 const sequelize = require ('../config/connection');
 
-class Patients extends Model {}
+class Patients extends Model {
+    checkPassword(loginPw) {
+        return bcrypt.compareSync(loginPw, this.password);
+      }
+}
 
 Patients.init(
     {
@@ -45,10 +50,12 @@ Patients.init(
             hooks: {
                 beforeCreate: async (newPatientsData) => {
                     newPatientsData.email = await newPatientsData.email.toLowerCase();
+                    newPatientsData.password = await bcrypt.hash(newPatientsData.password, 10);
                     return newPatientsData; 
                 },
                 beforeUpdate: async (updatedPatientsData) => {
                     updatedPatientsData.email = await updatedPatientsData.email.toLowerCase();
+                    updatedPatientsData.password = await bcrypt.hash(updatedPatientsData.password, 10);
                     return updatedPatientsData; 
                 },
             },
