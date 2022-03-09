@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Doctors, Appoitments, Patients, Appointments} = require('../models');
+const { Patients, Doctors, Appointments} = require('../models');
 const { upsert } = require('../models/Patients');
 
 
@@ -8,7 +8,7 @@ router.get('/', withAuth, async (req, res) => {
     try {
         const patientsData = await Patients.findByPk(req.session.Patients_id, {
             attributes: { exclude: ['password'] },
-            include: [{ model: Appoitments }],
+            include: [{ model: Appointments }],
 
         });
 
@@ -27,7 +27,7 @@ router.get('/', withAuth, async (req, res) => {
 router.post('/', async (req, res) => {
     try {
         if (req.session) {
-            const newAppointments = await Appoitments.create({
+            const newAppointments = await Appointments.create({
                 Doctors_id: req.body.id,
                 Patients_id: req.body.id,
                 notes: req.body.content, 
@@ -39,6 +39,33 @@ router.post('/', async (req, res) => {
         res.status(400).json(err);
     }
 });
+
+//this patients to appointments. 
+
+router.get('/:id/edit', async (req, res) => {
+    try {
+        const updatingAppointmentsData = await Appointments.findByPk(req.params.id, {
+            include: [
+                {
+                    model: Patients,
+                    attributes: ['name'],
+                    model: Doctors,
+                    attributes: ['name'],
+                
+                },
+            ],
+        });
+        const updatingAppointments = updatingAppointmentsData.get({ plain: true });
+        console.log(updatingAppointments);
+        res.render('updateAppointments', {
+            ...updatingAppointments,
+            logged_in: req.session.logged_in
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 
 // i found out that our models/appoitments.js contents appointment_ID but our db/seeds appointments code does not content appointment_ID
 router.delete('/', async (req, res) => {
