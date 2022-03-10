@@ -48,13 +48,17 @@ router.post("/", async (req, res) => {
       first_name: req.body.first_name,
       last_name: req.body.last_name,
       email: req.body.email,
-      isemailcontact: req.body.isemailcontact,
+      isemailcontact: 1,
       password: req.body.password,
     });
-    // req.session.save(() => {
-    // req.session.loggedIn = true;
+    req.session.save(() => {
+      req.session.user_id = dbPatientData.patients_id;
+      req.session.logged_in = true;
 
-    res.status(200).json(dbPatientData);
+      res.status(200).json(dbPatientData);
+    });
+
+    // res.status(200).json(dbPatientData);
     // });
   } catch (err) {
     console.log(err);

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Doctors, Patients } = require('../models');
+const { Doctors, Patients, Appointments } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -14,6 +14,44 @@ router.get('/', async (req, res) => {
     res.render('homepage', { 
       doctors, 
       logged_in: req.session.logged_in 
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// Use withAuth middleware to prevent access to route
+router.get('/profile', withAuth, async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    // const patientData = await Patients.findByPk(req.session.user_id, {
+    //   attributes: { exclude: ['password'] },
+    //   include: [{ model: Project }],
+    // });
+    const appointmentData = await Patients.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [
+        {
+          model: Appointments,
+          attributes: [
+            "appointments_id",
+            "doctors_id",
+            "patients_id",
+            "date_booked",
+            "notes",
+          ],
+        },
+      ],
+    });
+
+    const patientAppointments = appointmentData.get({ plain: true });
+    // res.status(200).json(appointments);
+
+    // const user = userData.get({ plain: true });
+
+    res.render('profile', {
+      ...patientAppointments,
+      logged_in: true
     });
   } catch (err) {
     res.status(500).json(err);
