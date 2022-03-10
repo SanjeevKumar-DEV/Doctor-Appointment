@@ -10,25 +10,28 @@
 
 ​
 ## Description
-> Doctor-Appointments is a booking tool to help new and existing patients to look for doctos that are availble for check-up appointment.
+- Doctor-Appointments is a booking tool to help new and existing patients to look for doctos that are availble for check-up appointment.
 
-> The patients can choose doctor whom they want to book for their next check-up appointment. Only existing patient can book an appointment with selected doctor. New patients need to create an account before making new appointment.
+- The patients can choose doctor whom they want to book for their next check-up appointment. Only existing patient can book an appointment with selected doctor. New patients need to create an account before making new appointment.
+
+- With this Doctor-Appointment Application on hand, all the patients could book appointment without coming to the clinic, over the phone or even after business hour. 
 
 ## Table of Contents
-
 - [Installation](#Installation)
-- [Usage](#Usage)
-- [Contributing](#Contributing)
-- [Tests](#Tests)
+- [Demonstration](#Demonstration)
+- [Link](#Link)
+- [Future Development](#Future Development)
 - [Questions](#Questions)
 - [License](#License)
+
 ​
 ## Installation
 ​To run successfully, our project requires the installation of Sequelize, dotenv, Express and Hadlebars. 
+
 The project requires a .env file to run (this is not included in the repository and to be installed into your local machine in order to run MySQL).
+
 ​
-## Usage / Demonstration 
-​
+## Demonstration 
 > Doctors List 
 ​
 - ![Homepage](./public/assets/Images/StartApplication.png) 
@@ -46,26 +49,19 @@ The project requires a .env file to run (this is not included in the repository 
 - ![Appointment Booked](./public/assets/Images/Delete.png) 
 ​
 ​
-## Contributing /Link 
-​
-> Contribution guidelines development is in progress. 
-​
-- ![Contribution Guidelines](https://www.contributor-covenant.org/) 
-​
-​
-## Tests / Future Developments. 
-​
-> Test Development strategy is in progress. 
+## Link ​
 
+Heroku: https://cryptic-wave-07227.herokuapp.com/ 
+​
+
+## Future Developments. 
 > This project could be used for small clinic with 3 to 4 doctors. In the future, if the clinic manager want to expand to other locations, we could: 
 
-Add 'Location' at the homepage, before patients can choose doctor. 
+- Add 'Location' at the homepage, before patients can choose doctor. 
 
-Doctor login page, doctors could see their coming up appointments and with whom. 
+- Doctor login page, doctors could see their coming up appointments, who is their patients and patient's medical history. 
 
-Appointment confirmation comes from doctor. 
-
-
+- Appointment confirmation comes from doctor. 
 
 ## Questions / Contact​
 > Our team members can be contacted here if you have any requests: 
