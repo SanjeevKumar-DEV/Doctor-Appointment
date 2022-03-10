@@ -1,4 +1,4 @@
-const Patients = require('./Patients');
+const Patients = require('./patients');
 const Doctors = require('./Doctors');
 const Appointments = require ('./Appointments');
 
