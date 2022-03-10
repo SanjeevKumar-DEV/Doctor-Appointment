@@ -3,7 +3,7 @@
 ![GNU GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)
 # Doctor-Appointment 
 
-[Application URL  ](https://take-notes-now-app.herokuapp.com/notes) <----waiting for the herokuapp>
+[Application on Heroku URL  ](https://cryptic-wave-07227.herokuapp.com/)
 
 ​
 [Repository URL ](https://github.com/SanjeevKumar-DEV/Note-Taker)<---waiting for our project public repsoitory>
@@ -19,7 +19,7 @@
 ## Table of Contents
 - [Installation](#Installation)
 - [Demonstration](#Demonstration)
-- [Link](#Link)
+- [Links](#Links)
 - [Future Development](#Future Development)
 - [Questions](#Questions)
 - [License](#License)
@@ -33,25 +33,22 @@ The project requires a .env file to run (this is not included in the repository 
 ​
 ## Demonstration 
 > Doctors List 
-​
-- ![Homepage](./public/assets/Images/StartApplication.png) 
-​
-> Login Page 
-​
-- ![Login for patients](./public/assets/Images/RetrieveNotes.png) 
+- ![Homepage](./public/assets/Images/StartApplication.png) <---- screenshot ​
+
+> Login Page ​
+- ![Login for patients](./public/assets/Images/RetrieveNotes.png) <---- screenshot 
 ​
 > Add New Note / Creating New Appointment. 
-​
-- ![Creating New Appointment](./public/assets/Images/AddNote.png) 
+- ![Creating New Appointment](./public/assets/Images/AddNote.png) <---- screenshot 
 ​
 > Created Appointment
+- ![Appointment Booked](./public/assets/Images/Delete.png) <---- screenshot 
 ​
-- ![Appointment Booked](./public/assets/Images/Delete.png) 
 ​
-​
-## Link ​
+## Links ​
 
 Heroku: https://cryptic-wave-07227.herokuapp.com/ 
+Github: 
 ​
 
 ## Future Developments. 
