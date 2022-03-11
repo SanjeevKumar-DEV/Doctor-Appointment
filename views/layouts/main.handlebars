@@ -17,9 +17,9 @@
         <nav>
           <!-- Conditionally render login or logout links -->
           {{#if logged_in}}
-            <a href="/profile">profile</a>
+            <a href="/profile">Profile</a>
             |
-            <button class="no-button" id="logout">logout</button>
+            <button class="no-button" id="logout">Logout</button>
           {{else}}
             <a href="/login">Patient Login</a>
           {{/if}}
@@ -30,14 +30,23 @@
         {{{body}}}
       </main>
     </div>
+    {{#if logged_in}}
     <div class="flex-column justify-space-around align-center">
       <footer>
         <h4>
-          <a href="/">Make Your Appointment With Best Doctors</a>
+          <a href="">Make your Appointment with Best Doctors</a>
         </h4>
       </footer>
     </div>
-
+    {{else}}
+    <div class="flex-column justify-space-around align-center">
+      <footer>
+        <h4>
+          <a href="">Login and choose your Doctor to make your Appointment</a>
+        </h4>
+      </footer>
+    </div>
+    {{/if}}
     <!-- Render script for logged in users only -->
     {{#if logged_in}}
       <script src="/js/logout.js"></script>

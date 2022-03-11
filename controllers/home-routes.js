@@ -58,6 +58,25 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });
 
+// Use withAuth middleware to prevent access to route
+router.get('/createAppointmentForm/:doctors_id', withAuth, async (req, res) => {
+  try {
+    req.session.save(() => {
+      req.session.doctor_id = req.params.doctors_id;
+      req.session.logged_in = true;
+      // res.status(200).json(dbPatientData);
+    });
+    // console.log(req.session);
+    res.render('create-appointment', {
+      patients_id: req.session.user_id,
+      doctors_id: req.params.doctors_id,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {

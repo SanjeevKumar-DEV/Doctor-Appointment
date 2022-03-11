@@ -1,18 +1,18 @@
 async function newFormHandler(event) {
     event.preventDefault();
   
-    const patient_name = document.querySelector('#patient_name').value;
-    const appointment_description = document.querySelector('#description').value;
-    const doctor_name = document.querySelector('#doctor_name').value;
-    const time_appointment = document.querySelector('#time_appoint');
+    // const patient_first_name = document.querySelector('#patient_first_name').value.trim();
+    // const patient_last_name = document.querySelector('#patient_last_name').value.trim();
+    const time_appointment = document.querySelector('#appointment-date').value.trim();
+    const appointment_description = document.querySelector('#notes').value.trim();
+    // const doctor_name = document.querySelector('#doctor_name').value;
+    
   
-    const response = await fetch(`/api/appointment`, {
+    const response = await fetch(`/api/appointments`, {
       method: 'POST',
       body: JSON.stringify({
-        patient_name,
-        appointment_description,
-        doctor_name,
         time_appointment,
+        appointment_description       
       }),
       headers: {
         'Content-Type': 'application/json',
@@ -20,11 +20,20 @@ async function newFormHandler(event) {
     });
   
     if (response.ok) {
-      document.location.replace('/');
+      document.location.replace('/profile');
     } else {
       alert('Failed to add appointment');
     }
   }
+
+// // Datepicker widget
+// $(function () {
+//   $('#datepicker').datepicker({
+//     changeMonth: true,
+//     changeYear: true,
+//   });
+// });
+
   
   document
     .querySelector('.new-appointment-form')
