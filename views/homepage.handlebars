@@ -1,15 +1,27 @@
-{{#each doctors as |doctor| }}
-<div class="row mb-4 project">
-  <div class="col-md-5">
-    <h4>
-      {{{get_emoji}}}
-      <a href="/api/doctors/{{doctor.doctors_id}}">{{doctor.first_name}} {{doctor.last_name}}</a>
-    </h4>
+{{#each doctors as |doctor|}}
+  <div class="row mb-4 project">
+    <div class="col-md-4">
+      <h4>
+        {{{get_emoji}}}
+        <a
+          href="/api/doctors/{{doctor.doctors_id}}"
+          id="{{doctor.doctors_id}}"
+        >{{doctor.first_name}} {{doctor.last_name}}</a>
+        {{! <button type="submit" value="Submit" class="btn btn-info">Create Appointment</button> }}
+      </h4>
+    </div>
+    <div class="col-md-4">
+      <h5>
+        {{doctor.speciality}}
+      </h5>
+    </div>
+    <div class="col-md-4">
+      <h4>
+        <form action="/createAppointmentForm/{{doctor.doctors_id}}">
+          <input type="submit" value="Create Appointment" class="btn btn-info" />
+        </form>
+        {{!-- <button type="submit" value="Submit" class="btn btn-info">Create Appointment</button> --}}
+      </h4>
+    </div>
   </div>
-  <div class="col-md-7">
-    <h5>
-      {{doctor.speciality}}
-    </h5>
-  </div>
-</div>
 {{/each}}

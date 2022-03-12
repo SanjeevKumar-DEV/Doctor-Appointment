@@ -1,15 +1,17 @@
 <div class="row">
   <div class="col-auto">
-    <h3>Welcome, {{first_name}} {{last_name}}!</h2>
-    <h4>Your Email Address: {{email}} </h4>
+    <h3>{{first_name}} {{last_name}} </h2>
+    </br>
+    <h4>Your Details </h4>
+    <h5>Email Address: {{email}} </h5>
   </div>
 </div>
 
-  {{#if Appointments.length}}
+  {{!-- {{#if Appointments.length}}
   <div class="col-md-6 project-list">
     </br>
     </br>
-    </div>br>
+    </div>
     <h3>Current List Of Appointments:</h3>
 
     {{#each Appointments as |appointment|}}
@@ -29,7 +31,40 @@
     </div>
     {{/each}}
   </div>
-  {{/if}}
-</div>
+  {{/if}} --}}
+
+{{#if Appointments.length}}
+  <div class="col-md-6 project-list">
+    </br>
+    </br>
+    </div>
+    <h3>Your Appointments:</h3>
+    </br>
+    </br>
+{{#each Appointments as |appointment|}}
+  <div class="row mb-4 project">
+    <div class="col-md-4">
+      <h4>
+        {{{get_emoji}}}
+        <a href="/api/doctors/{{appointment.doctors_id}}">Your Doctor</a>
+      </h4>
+    </div>
+    <div class="col-md-4">
+      <h4>
+        Appointment Time : {{format_date appointment.date_booked}} 
+      </h4>
+      <h4>Details : {{appointment.notes}}</h4>
+    </div>
+    <div class="col-md-4">
+      <h4>
+        <form action="/deleteAppointment/{{doctor.doctors_id}}">
+          <input type="submit" value="Delete Appointment" class="btn btn-info" />
+        </form>
+        {{!-- <button type="submit" value="Submit" class="btn btn-info">Create Appointment</button> --}}
+      </h4>
+    </div>
+  </div>
+{{/each}}
+{{/if}}
 
 <script src="./js/profile.js"></script>

@@ -29,10 +29,10 @@ router.get("/:id", async (req, res) => {
 router.post('/', async (req, res) => {
   try {
     const dbAppointmentData = await Appointments.create({
-      doctors_id: req.body.doctors_id,
-      patients_id: req.body.patients_id,
-      date_booked: req.body.date_booked,
-      notes: req.body.notes,
+      doctors_id: req.session.doctor_id,
+      patients_id: req.session.user_id,
+      date_booked: req.body.time_appointment,
+      notes: req.body.appointment_description,
     });
     // req.session.save(() => {
       // req.session.loggedIn = true;
