@@ -69,6 +69,9 @@ router.get("/profile", withAuth, async (req, res) => {
 // Use withAuth middleware to prevent access to route
 router.get("/createAppointmentForm/:doctors_id", withAuth, async (req, res) => {
   try {
+    const doctorData = await Doctors.findByPk(req.params.doctors_id);
+    const doctor = doctorData.get({ plain: true });
+
     req.session.save(() => {
       req.session.doctor_id = req.params.doctors_id;
       req.session.logged_in = true;
@@ -76,6 +79,7 @@ router.get("/createAppointmentForm/:doctors_id", withAuth, async (req, res) => {
     });
     // console.log(req.session);
     res.render("create-appointment", {
+      doctor,
       patients_id: req.session.user_id,
       doctors_id: req.params.doctors_id,
       logged_in: true,
