@@ -25,6 +25,22 @@ const doctorData = [
         isemailcontact: 1,
         password: "123456789p"
     },
+    {
+        speciality: "Neuro Surgeon",
+        first_name: "Shane",
+        last_name: "Haymes",
+        email: "shane.haymes@example.com",
+        isemailcontact: 1,
+        password: "123456789p"
+    },
+    {
+        speciality: "Orthodontist",
+        first_name: "Tony",
+        last_name: "Blummer",
+        email: "tony.blummer@example.com",
+        isemailcontact: 1,
+        password: "123456789p"
+    },
 
 ];
 

@@ -43,19 +43,19 @@
     </br>
 {{#each Appointments as |appointment|}}
   <div class="row mb-4 project">
-    <div class="col-md-4">
+    <div class="col-md-5">
       <h4>
         {{{get_emoji}}}
-        <a href="/api/doctors/{{appointment.doctors_id}}">Your Doctor</a>
+        <a href="/api/doctors/{{appointment.doctors_id}}">{{appointment.Doctor.first_name}} {{appointment.Doctor.last_name}} <span style="color:#538b01;">({{appointment.Doctor.speciality}})</span></a>
       </h4>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-5">
       <h4>
         Appointment Time : {{format_date appointment.date_booked}} 
       </h4>
       <h4>Details : {{appointment.notes}}</h4>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-2">
       <h4>
         <form action="/deleteAppointment/{{doctor.doctors_id}}">
           <input type="submit" value="Delete Appointment" class="btn btn-info" />
