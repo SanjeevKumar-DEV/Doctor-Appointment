@@ -3,6 +3,10 @@
 
     <form class="form new-appointment-form">
       <div class="form-group">
+        <label for="doctor-details">Doctor Details: {{doctor.first_name}} {{doctor.last_name}} (<span style="color:#538b01;">{{doctor.speciality}}</span>)</label>
+        {{!-- <input class="form-input" type="text" id="patient-first-name" /> --}}
+      </div>
+      <div class="form-group">
         <label for="patient-first-name">patient first name:</label>
         <input class="form-input" type="text" id="patient-first-name" />
       </div>
