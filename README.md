@@ -54,9 +54,9 @@ Github:
 ## Future Developments. 
 > This project could be used for small clinic with 3 to 4 doctors. In the future, if the clinic manager want to expand to other locations, we could: 
 
-- Add 'Location' at the homepage, before patients can choose doctor. 
+- Add 'Location' at the homepage.
 
-- Doctor login page, doctors could see their coming up appointments, who is their patients and patient's medical history. 
+- Doctor login page.
 
 - Appointment confirmation comes from doctor. 
 
