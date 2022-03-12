@@ -42,7 +42,7 @@
     </br>
     </br>
 {{#each Appointments as |appointment|}}
-  <div class="row mb-4 project">
+  <div class="row mb-4 appointment-list">
     <div class="col-md-5">
       <h4>
         {{{get_emoji}}}
@@ -57,8 +57,8 @@
     </div>
     <div class="col-md-2">
       <h4>
-        <form action="/deleteAppointment/{{doctor.doctors_id}}">
-          <input type="submit" value="Delete Appointment" class="btn btn-info" />
+        <form action="">
+          <input type="submit" value="Delete Appointment" class="btn btn-info" data-id="{{appointment.appointments_id}}"/>
         </form>
         {{!-- <button type="submit" value="Submit" class="btn btn-info">Create Appointment</button> --}}
       </h4>
