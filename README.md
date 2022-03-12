@@ -46,19 +46,19 @@ The project requires a .env file to run (this is not included in the repository 
 ## Demonstration 
 > Homepage
 ​
-- ![Homepage](./public/assets/Images/StartApplication.png) 
+- ![alt text](https://github.com/SanjeevKumar-DEV/Doctor-Appointment/blob/main/documents/screenshots/HomePage.png?raw=true)
 ​
 > Login Page 
 ​
-- ![Login for patients](./public/assets/Images/RetrieveNotes.png) 
-​
+- ![alt text](https://github.com/SanjeevKumar-DEV/Doctor-Appointment/blob/main/documents/screenshots/Login.png?raw=true)
+
 > Creating New Appointment. 
 ​
-- ![Creating New Appointment](./public/assets/Images/AddNote.png) 
+- ![alt text](https://github.com/SanjeevKumar-DEV/Doctor-Appointment/blob/main/documents/screenshots/CreatAppointment.png?raw=true)
 ​
 > Profile Page:
 ​
-- ![Appointment Booked](./public/assets/Images/Delete.png) 
+- ![alt text](https://github.com/SanjeevKumar-DEV/Doctor-Appointment/blob/main/documents/screenshots/Profile.png?raw=true)
 ​
 ​
 ## Link ​
