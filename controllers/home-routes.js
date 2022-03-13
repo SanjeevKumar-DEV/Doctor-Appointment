@@ -41,7 +41,8 @@ router.get("/profile", withAuth, async (req, res) => {
             "notes",
           ],
           include: [{
-            model : Doctors
+            model : Doctors,
+            attributes: ["first_name", "last_name", "speciality"],
           }
           ]
         },
