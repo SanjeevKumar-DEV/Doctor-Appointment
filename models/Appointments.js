@@ -13,6 +13,7 @@ Appointments.init(
         },
         doctors_id: {
             type: DataTypes.INTEGER,
+            allowNull: false,
             references: {
               model: 'doctors',
               key: 'doctors_id',
@@ -20,6 +21,7 @@ Appointments.init(
         },
         patients_id: {
             type: DataTypes.INTEGER,
+            allowNull: false,
             references: {
               model: 'patients',
               key: 'patients_id',

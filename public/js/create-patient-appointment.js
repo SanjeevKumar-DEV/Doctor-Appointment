@@ -10,6 +10,7 @@ async function newFormHandler(event) {
   
     const response = await fetch(`/api/appointments`, {
       method: 'POST',
+      cache : 'reload',
       body: JSON.stringify({
         time_appointment,
         appointment_description       
