@@ -30,7 +30,7 @@ router.get("/:id", async (req, res) => {
 router.post('/', withAuth, async (req, res) => {
   try {
     const dbAppointmentData = await Appointments.create({
-      doctors_id: req.session.doctor_id,
+      doctors_id: req.body.doctor_id,
       patients_id: req.session.user_id,
       date_booked: req.body.time_appointment,
       notes: req.body.appointment_description,

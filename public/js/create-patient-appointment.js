@@ -3,6 +3,7 @@ async function newFormHandler(event) {
   
     // const patient_first_name = document.querySelector('#patient_first_name').value.trim();
     // const patient_last_name = document.querySelector('#patient_last_name').value.trim();
+    const doctor_id = document.querySelector('#doctor-id').value.trim();
     const time_appointment = document.querySelector('#appointment-date').value.trim();
     const appointment_description = document.querySelector('#notes').value.trim();
     // const doctor_name = document.querySelector('#doctor_name').value;
@@ -12,6 +13,7 @@ async function newFormHandler(event) {
       method: 'POST',
       cache : 'reload',
       body: JSON.stringify({
+        doctor_id,
         time_appointment,
         appointment_description       
       }),
