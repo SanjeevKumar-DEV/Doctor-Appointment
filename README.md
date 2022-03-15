@@ -81,7 +81,7 @@ In the future, it has the option to be implemented across multiple clinics if th
 > Our team members can be contacted here if you have any requests: 
 - [Sanjeev Kumar](https://github.com/SanjeevKumar-DEV)
 - [Sorna Kesavan](https://github.com/alsornak)
-- [Sanjeev Kumar](https://github.com/SanjeevKumar-DEV) <---- need Karthik page>
+- [Karthik JaganathanLoganathan](https://github.com/Karthik-JaganathanLoganathan) 
 - [Binh An Nguyen](https://github.com/AndyNg0712)
 
 ## License
