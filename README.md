@@ -6,7 +6,7 @@
 [Application URL](https://cryptic-wave-07227.herokuapp.com/)
 
 ​
-[Repository URL ](https://github.com/SanjeevKumar-DEV/Note-Taker)<---waiting for our project public repsoitory>
+[Repository URL ](https://github.com/SanjeevKumar-DEV/Doctor-Appointment)
 
 ​
 ## Description
@@ -64,7 +64,8 @@ The project requires a .env file to run (this is not included in the repository 
 ## Link ​
 
 Heroku: https://cryptic-wave-07227.herokuapp.com/ 
-Github: 
+Github: https://github.com/SanjeevKumar-DEV/Doctor-Appointment
+
 ​
 
 ## Future Developments. 
