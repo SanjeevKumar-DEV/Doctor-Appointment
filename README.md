@@ -54,7 +54,7 @@ The project requires a .env file to run (this is not included in the repository 
 
 > Creating New Appointment. 
 ​
-- ![alt text](https://github.com/SanjeevKumar-DEV/Doctor-Appointment/blob/main/documents/screenshots/CreatAppointment.png?raw=true)
+- ![alt text](https://github.com/SanjeevKumar-DEV/Doctor-Appointment/blob/main/documents/screenshots/CreateAppointment.png?raw=true)
 ​
 > Profile Page:
 ​
