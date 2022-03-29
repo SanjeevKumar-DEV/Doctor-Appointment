@@ -26,7 +26,8 @@
 
 - With this Doctor-Appointment Application on hand, all the patients could book appointment without coming to the clinic, over the phone or even after business hour. 
 
- ## Technologies : Javascript, CSS , HTML, ORM, MVC, Sequelize, Cookies, Sessions, MySql, Authentication  
+ ## Technologies : 
+ - Javascript, CSS , HTML, ORM, MVC, Sequelize, Cookies, Sessions, MySql, Authentication  
 
 ## Table of Contents
 - [Installation](#Installation)
